@@ -1,0 +1,14 @@
+[
+  {
+    "sample": "m1",
+    "device": "d1",
+    "temperature": "22.50",
+    "unit": "C"
+  },
+  {
+    "sample": "m2",
+    "device": "d1",
+    "temperature": null,
+    "unit": "C"
+  }
+]
