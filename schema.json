@@ -1,3 +1,13 @@
 {
-  "measurements": "sample TEXT PRIMARY KEY, device TEXT NOT NULL, temperature TEXT, unit TEXT NOT NULL"
+  "measurements": {
+    "columns": "sample TEXT PRIMARY KEY, device TEXT NOT NULL, temperature TEXT, unit TEXT NOT NULL",
+    "key": ["sample"],
+    "fields": [
+      {"name": "sample", "field_id": "fld_aeb8ff4e247b93cb", "type": "string", "nullable": false},
+      {"name": "device", "field_id": "fld_6f566644be600235", "type": "string", "nullable": false},
+      {"name": "temperature", "field_id": "fld_0ccc7a034286699e", "type": "string", "nullable": true},
+      {"name": "unit", "field_id": "fld_8322a4d1aa80bab9", "type": "string", "nullable": false}
+    ]
+  },
+  "_note": "字段身份由 warehouse/definition.py 确定性派生；登记新版本请用 `warehouse versions` 导出运行时定义后修改。"
 }

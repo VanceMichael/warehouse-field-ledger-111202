@@ -53,7 +53,10 @@ class CatalogTests(unittest.TestCase):
     def test_transaction_failure(self):
         with self.assertRaises(RuntimeError):
             with transaction(self.connection):
-                self.connection.execute('INSERT INTO ingest_batches VALUES (?, ?, ?)', ('partial', 'abc', 1))
+                self.connection.execute(
+                    'INSERT INTO ingest_batches (batch, digest, rows, schema_id, version, written_at) '
+                    "VALUES ('partial', 'abc', 1, 'manual', 1, 'now')"
+                )
                 raise RuntimeError('模拟写入中断')
         self.assertEqual(self.connection.execute('SELECT COUNT(*) FROM ingest_batches').fetchone()[0], 0)
 
